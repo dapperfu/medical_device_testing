@@ -246,3 +246,92 @@ RELATIONS:
   VALUE: SSS009
 
 [[/SECTION]]
+
+[[SECTION]]
+TITLE: Remote acquisition tests
+
+[REQUIREMENT]
+UID: TD028
+TITLE: SOAP returns a patient
+STATEMENT: test_dispatch_returns_registered_patient and test_soap_device_returns_healthy_adult shall return the registered patient fields.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS010
+
+[REQUIREMENT]
+UID: TD029
+TITLE: SOAP sensor fault
+STATEMENT: test_dispatch_omits_invalid_sensor_vitals and test_soap_device_returns_sensor_fault shall preserve sensor_valid false.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS010
+
+[REQUIREMENT]
+UID: TD030
+TITLE: SOAP unknown patient
+STATEMENT: test_dispatch_unknown_patient_is_a_fault and test_soap_device_unknown_patient_raises shall not produce a Human for an unknown id.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS011
+
+[REQUIREMENT]
+UID: TD031
+TITLE: SOAP malformed request
+STATEMENT: test_dispatch_malformed_xml_is_a_fault shall return a SOAP fault for a body that is not XML.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS011
+
+[REQUIREMENT]
+UID: TD032
+TITLE: ReadyAPI returns a patient
+STATEMENT: test_readyapi_device_returns_healthy_adult shall return the healthy adult fields.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS012
+
+[REQUIREMENT]
+UID: TD033
+TITLE: ReadyAPI pediatric patient
+STATEMENT: test_readyapi_device_returns_pediatric_patient shall return the pediatric patient fields.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS012
+
+[REQUIREMENT]
+UID: TD034
+TITLE: ReadyAPI sensor fault
+STATEMENT: test_readyapi_device_returns_sensor_fault shall preserve an invalid sensor.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS012
+
+[REQUIREMENT]
+UID: TD035
+TITLE: SOAP sensor fault on the monitor
+STATEMENT: test_soap_sensor_fault_still_alarms_on_monitor shall raise only SENSOR_FAULT after the patient is fetched over SOAP.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS006
+- TYPE: Parent
+  VALUE: SSS010
+
+[REQUIREMENT]
+UID: TD036
+TITLE: ReadyAPI unknown patient
+STATEMENT: test_readyapi_device_unknown_patient_raises shall not produce a Human for an unknown id.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS013
+
+[REQUIREMENT]
+UID: TD037
+TITLE: ReadyAPI sensor fault on the monitor
+STATEMENT: test_readyapi_sensor_fault_still_alarms_on_monitor shall raise only SENSOR_FAULT after the patient is fetched from ReadyAPI.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS006
+- TYPE: Parent
+  VALUE: SSS012
+
+[[/SECTION]]
