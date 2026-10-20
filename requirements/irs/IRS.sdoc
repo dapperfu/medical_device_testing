@@ -41,4 +41,24 @@ RELATIONS:
 - TYPE: Parent
   VALUE: SSS006
 
+[REQUIREMENT]
+UID: IRS005
+TITLE: SOAP GetPatient
+STATEMENT: GetPatient shall accept a patientId and shall return that patient's identity, age, vitals, and sensor validity, or a SOAP fault when the patient is unknown or the request is malformed.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS010
+- TYPE: Parent
+  VALUE: SSS011
+
+[REQUIREMENT]
+UID: IRS006
+TITLE: ReadyAPI patient resource
+STATEMENT: GET /patients/{patient_id} shall return that patient's identity, age, vitals, and sensor validity as JSON, or status 404 when the patient is unknown.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS012
+- TYPE: Parent
+  VALUE: SSS013
+
 [[/SECTION]]
