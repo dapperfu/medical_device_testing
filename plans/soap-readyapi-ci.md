@@ -10,7 +10,7 @@ todos:
     status: pending
   - id: soap-device
     content: Implement SoapPatientService and SoapPatientDevice with fixtures and tests
-    status: pending
+    status: completed
   - id: readyapi-device
     content: Pin readyapi 0.112.0 and implement ReadyApiPatientService and ReadyApiPatientDevice with fixtures and tests
     status: pending
