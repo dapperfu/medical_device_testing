@@ -25,7 +25,7 @@ STATEMENT: Verification shall run unit tests, then integration tests, then softw
 [REQUIREMENT]
 UID: SDP004
 TITLE: SOUP identification
-STATEMENT: SOUP shall be identified as pytest 9.1.1 and pytest-html 4.2.0 from pytest-dev, Ruff 0.17.1 from Astral, and StrictDoc 0.30.1, with those versions pinned in uv.lock. The monitor package shall have no runtime dependency. Published-anomaly review is not completed, and this mock is not released medical-device software.
+STATEMENT: SOUP shall be identified as pytest 9.1.1 and pytest-html 4.2.0 from pytest-dev, Ruff 0.17.1 from Astral, StrictDoc 0.30.1, readyapi 0.112.0 from KhulnaSoft, and httpx 0.28.1, with those versions pinned in uv.lock. readyapi 0.112.0 is a runtime dependency of the ReadyAPI patient device. httpx 0.28.1 is required by that framework's test client. Published-anomaly review is not completed, and this mock is not released medical-device software.
 
 [REQUIREMENT]
 UID: SDP005
