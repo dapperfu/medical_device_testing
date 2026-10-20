@@ -11,6 +11,9 @@ pytest_plugins = [
     "tests.fixtures.pediatric_patient",
     "tests.fixtures.sensor_fault_patient",
     "tests.fixtures.patient_monitor",
+    "tests.fixtures.soap_patient_service",
+    "tests.fixtures.soap_patient_device",
+    "tests.fixtures.readyapi_patient_device",
 ]
 
 
