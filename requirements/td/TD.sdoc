@@ -1,0 +1,248 @@
+[DOCUMENT]
+TITLE: Test Description
+UID: DOC-TD
+VERSION: 0.1.0
+DATE: 2026-10-20
+
+[[SECTION]]
+TITLE: Unit tests
+
+[REQUIREMENT]
+UID: TD001
+TITLE: Age selects population
+STATEMENT: test_age_selects_population shall show that age 18 is not pediatric and age 17 is pediatric.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS002
+
+[REQUIREMENT]
+UID: TD002
+TITLE: Patients inherit from Human
+STATEMENT: test_mock_patients_inherit_from_human shall show that each mock patient is a Human, the pediatric patient is age 8, and the sensor-fault patient has no numeric vitals.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS002
+- TYPE: Parent
+  VALUE: SSS008
+
+[REQUIREMENT]
+UID: TD003
+TITLE: Default profiles accepted
+STATEMENT: test_default_profiles_are_accepted shall accept the adult and pediatric defaults and shall map age 18 to adult and age 17 to pediatric.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS002
+- TYPE: Parent
+  VALUE: SSS007
+
+[REQUIREMENT]
+UID: TD004
+TITLE: Reject SpO2 above 100
+STATEMENT: test_rejects_spo2_above_100 shall reject an SpO2 low limit of 101.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS007
+
+[REQUIREMENT]
+UID: TD005
+TITLE: Reject heart-rate order
+STATEMENT: test_rejects_heart_rate_high_not_above_low shall reject a heart-rate high limit that is not above the low limit.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS007
+
+[REQUIREMENT]
+UID: TD006
+TITLE: Reject temperature order
+STATEMENT: test_rejects_temperature_high_not_above_low shall reject a temperature high limit that is not above the low limit.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS007
+
+[REQUIREMENT]
+UID: TD007
+TITLE: Equal to limit
+STATEMENT: test_equal_to_limit_does_not_alarm shall show that adult vitals equal to each limit do not alarm.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS003
+
+[REQUIREMENT]
+UID: TD008
+TITLE: One past the limit
+STATEMENT: test_one_past_adult_limits_alarms shall show that one step outside each adult limit raises that alarm.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS002
+- TYPE: Parent
+  VALUE: SSS003
+
+[REQUIREMENT]
+UID: TD009
+TITLE: Pediatric limits differ
+STATEMENT: test_pediatric_limits_differ_from_adult shall show that SpO2 91 and heart rate 140 alarm differently on the adult and pediatric profiles.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS002
+
+[REQUIREMENT]
+UID: TD010
+TITLE: Sensor fault unit
+STATEMENT: test_sensor_fault_suppresses_vital_alarms shall show that an invalid sensor raises only SENSOR_FAULT.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS006
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Integration tests
+
+[REQUIREMENT]
+UID: TD011
+TITLE: Healthy adult integration
+STATEMENT: test_healthy_adult_reports_vitals_and_no_alarm shall present the healthy adult vitals unchanged, with the adult profile and no alarm.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS001
+- TYPE: Parent
+  VALUE: SSS002
+- TYPE: Parent
+  VALUE: SSS005
+
+[REQUIREMENT]
+UID: TD012
+TITLE: Tachycardic adult integration
+STATEMENT: test_tachycardic_adult_heart_rate_alarm shall raise only HEART_RATE for the tachycardic adult.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS002
+
+[REQUIREMENT]
+UID: TD013
+TITLE: Hypoxic adult integration
+STATEMENT: test_hypoxic_adult_spo2_alarm shall raise only SPO2 for the hypoxic adult.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS002
+
+[REQUIREMENT]
+UID: TD014
+TITLE: Hypertensive adult integration
+STATEMENT: test_hypertensive_adult_blood_pressure_alarm shall raise only BLOOD_PRESSURE for the hypertensive adult.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS002
+
+[REQUIREMENT]
+UID: TD015
+TITLE: Pediatric integration
+STATEMENT: test_pediatric_patient_uses_pediatric_profile shall select the pediatric profile and shall not alarm at heart rate 140.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS002
+- TYPE: Parent
+  VALUE: SSS005
+
+[REQUIREMENT]
+UID: TD016
+TITLE: Sensor fault integration
+STATEMENT: test_sensor_fault_patient_hides_vitals shall hide numeric vitals and raise only SENSOR_FAULT.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS006
+
+[REQUIREMENT]
+UID: TD017
+TITLE: Rejected limits integration
+STATEMENT: test_rejected_limits_leave_the_adult_profile shall keep the adult profile after a rejected command and shall not alarm the healthy adult.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS007
+
+[REQUIREMENT]
+UID: TD018
+TITLE: Idle and stopped integration
+STATEMENT: test_idle_and_stopped_monitor_has_no_alarms shall report no alarms before start and after stop, and shall alarm only while running.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS004
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Software system tests
+
+[REQUIREMENT]
+UID: TD019
+TITLE: System vitals
+STATEMENT: test_system_reports_attached_vitals shall present the five healthy-adult vital values while monitoring is running.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS001
+
+[REQUIREMENT]
+UID: TD020
+TITLE: System profile by age
+STATEMENT: test_system_profile_follows_age shall apply the adult profile to the healthy adult and the pediatric profile to the pediatric patient.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS002
+
+[REQUIREMENT]
+UID: TD021
+TITLE: System boundary
+STATEMENT: test_system_boundary_value_does_not_alarm shall not alarm at heart rate 120 and shall alarm at heart rate 121 on the adult profile.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS003
+
+[REQUIREMENT]
+UID: TD022
+TITLE: System start and stop
+STATEMENT: test_system_start_and_stop shall reject start with no patient and shall clear alarms after stop.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS004
+
+[REQUIREMENT]
+UID: TD023
+TITLE: System attach
+STATEMENT: test_system_attach_stores_patient_and_profile shall store the pediatric patient and select the pediatric profile.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS005
+
+[REQUIREMENT]
+UID: TD024
+TITLE: System sensor fault
+STATEMENT: test_system_sensor_fault shall raise only SENSOR_FAULT and shall not present vitals as valid.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS006
+
+[REQUIREMENT]
+UID: TD025
+TITLE: System rejected command
+STATEMENT: test_system_rejects_out_of_range_command shall keep the previous limits and shall not alarm the healthy adult after a rejected command.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS007
+
+[REQUIREMENT]
+UID: TD026
+TITLE: Fixture scope
+STATEMENT: test_fixtures_are_function_scoped shall show that each required fixture is function scoped.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS008
+
+[REQUIREMENT]
+UID: TD027
+TITLE: HTML report configuration
+STATEMENT: test_html_report_path_and_metadata shall show that the report path is docs/pytest-report.html, that the HTML is self-contained, and that version 0.1.0, the device configuration, the tools, and the operator are recorded.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS009
+
+[[/SECTION]]

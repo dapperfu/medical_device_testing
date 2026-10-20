@@ -10,7 +10,7 @@ todos:
     status: completed
   - id: requirements
     content: Write SDP, SRS, SSS, SDD, IRS, TP, and TD in requirements/ and validate with StrictDoc
-    status: pending
+    status: completed
   - id: humans-and-device
     content: Implement Human subclasses, AlarmLimits, AlarmEvaluator, and PatientMonitor with Implements comments
     status: pending
