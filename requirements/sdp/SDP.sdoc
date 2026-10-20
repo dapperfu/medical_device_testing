@@ -1,0 +1,40 @@
+[DOCUMENT]
+TITLE: Software Development Plan
+UID: DOC-SDP
+VERSION: 0.1.0
+DATE: 2026-10-20
+
+[[SECTION]]
+TITLE: Planning for this mock increment
+
+[REQUIREMENT]
+UID: SDP001
+TITLE: Confirmed software safety class
+STATEMENT: This mock shall be developed using the IEC 62304:2006+AMD1:2015 Class C activity set. The user confirmed Class C on 2026-10-20. These records do not constitute a claim of conformity.
+
+[REQUIREMENT]
+UID: SDP002
+TITLE: Coding standard
+STATEMENT: Python in this increment shall follow PEP 8 and shall pass Ruff using the configuration in pyproject.toml.
+
+[REQUIREMENT]
+UID: SDP003
+TITLE: Verification order and record
+STATEMENT: Verification shall run unit tests, then integration tests, then software system tests. make test shall record the result in docs/pytest-report.html.
+
+[REQUIREMENT]
+UID: SDP004
+TITLE: SOUP identification
+STATEMENT: SOUP shall be identified as pytest 9.1.1 and pytest-html 4.2.0 from pytest-dev, Ruff 0.17.1 from Astral, and StrictDoc 0.30.1, with those versions pinned in uv.lock. The monitor package shall have no runtime dependency. Published-anomaly review is not completed, and this mock is not released medical-device software.
+
+[REQUIREMENT]
+UID: SDP005
+TITLE: Traceability
+STATEMENT: Traceability shall connect system requirements, software requirements, design, interfaces, test descriptions, and tests by UID relations and by Implements and Verifies comments.
+
+[REQUIREMENT]
+UID: SDP006
+TITLE: Resource acceptance not applicable
+STATEMENT: This design has no fixed-size buffers. Memory-overflow acceptance criteria do not apply to this increment.
+
+[[/SECTION]]
