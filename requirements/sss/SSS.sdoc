@@ -85,3 +85,40 @@ RELATIONS:
   VALUE: SRS005
 
 [[/SECTION]]
+
+[[SECTION]]
+TITLE: Remote patient acquisition
+
+[REQUIREMENT]
+UID: SSS010
+TITLE: SOAP GetPatient returns a Human
+STATEMENT: SoapPatientDevice shall return a Human matching the GetPatient body, including sensor_valid false when the body says the sensor is invalid.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SRS006
+
+[REQUIREMENT]
+UID: SSS011
+TITLE: SOAP fault does not return a patient
+STATEMENT: A SOAP fault or an unknown patient shall not produce a Human.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SRS006
+
+[REQUIREMENT]
+UID: SSS012
+TITLE: ReadyAPI patient resource returns a Human
+STATEMENT: ReadyApiPatientDevice shall return a Human matching the JSON patient resource.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SRS007
+
+[REQUIREMENT]
+UID: SSS013
+TITLE: Unknown ReadyAPI patient does not return a patient
+STATEMENT: An unknown ReadyAPI patient shall not produce a Human.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SRS007
+
+[[/SECTION]]
