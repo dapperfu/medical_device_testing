@@ -16,7 +16,7 @@ todos:
     status: completed
   - id: pytest-suite
     content: Add per-fixture modules and unit, integration, and system tests with Verifies comments and TD links
-    status: pending
+    status: completed
   - id: html-output
     content: Generate docs/html, docs/index.html, and docs/pytest-report.html and run make test
     status: pending
