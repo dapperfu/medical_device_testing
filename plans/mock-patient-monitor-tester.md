@@ -13,7 +13,7 @@ todos:
     status: completed
   - id: humans-and-device
     content: Implement Human subclasses, AlarmLimits, AlarmEvaluator, and PatientMonitor with Implements comments
-    status: pending
+    status: completed
   - id: pytest-suite
     content: Add per-fixture modules and unit, integration, and system tests with Verifies comments and TD links
     status: pending
