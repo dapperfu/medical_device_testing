@@ -19,7 +19,7 @@ todos:
     status: completed
   - id: html-output
     content: Generate docs/html, docs/index.html, and docs/pytest-report.html and run make test
-    status: pending
+    status: completed
 isProject: false
 ---
 
