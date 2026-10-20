@@ -1,0 +1,87 @@
+[DOCUMENT]
+TITLE: Software Requirements Specification
+UID: DOC-SSS
+VERSION: 0.1.0
+DATE: 2026-10-20
+
+[[SECTION]]
+TITLE: Monitor behavior
+
+[REQUIREMENT]
+UID: SSS001
+TITLE: Report five vital values
+STATEMENT: While monitoring is running and the sensor is valid, the monitor shall report the attached patient's heart rate, oxygen saturation, systolic pressure, diastolic pressure, and temperature unchanged.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SRS001
+
+[REQUIREMENT]
+UID: SSS002
+TITLE: Select the limit profile by age
+STATEMENT: Age 18 years or older shall select the adult profile, and age under 18 years shall select the pediatric profile. Adult alarms are heart rate below 50 or above 120 bpm, SpO2 below 90 percent, systolic pressure above 160 mmHg, diastolic pressure above 100 mmHg, and temperature below 35.0 or above 38.0 degrees Celsius. Pediatric alarms are heart rate below 70 or above 160 bpm, SpO2 below 92 percent, systolic pressure above 120 mmHg, diastolic pressure above 80 mmHg, and temperature below 35.5 or above 38.0 degrees Celsius.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SRS002
+
+[REQUIREMENT]
+UID: SSS003
+TITLE: Inclusive limits
+STATEMENT: A vital sign equal to its limit shall not raise that vital's alarm.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SRS002
+
+[REQUIREMENT]
+UID: SSS004
+TITLE: Idle and stopped monitor
+STATEMENT: Before start and after stop, the monitor shall report no alarms and shall not present vitals as valid. start with no patient attached shall be rejected.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SRS001
+
+[REQUIREMENT]
+UID: SSS005
+TITLE: Attach selects the default profile
+STATEMENT: attach shall store the patient and select that patient's default limit profile.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SRS001
+
+[REQUIREMENT]
+UID: SSS006
+TITLE: Sensor fault risk control
+STATEMENT: When the sensor is invalid, the monitor shall raise only SENSOR_FAULT and shall not present vitals as valid.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SRS003
+
+[REQUIREMENT]
+UID: SSS007
+TITLE: Reject out-of-range limit command
+STATEMENT: set_limits shall reject a command whose heart-rate low limit is outside 20 through 200, whose heart-rate high limit is outside 30 through 250 or not strictly above the low limit, whose SpO2 low limit is outside 50 through 100, whose systolic high limit is outside 80 through 250, whose diastolic high limit is outside 40 through 150, or whose temperature limits are outside 30.0 through 43.0 or whose temperature high limit is not strictly above the low limit. A rejected command shall not be used for alarm evaluation, and the previously accepted limits shall remain.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SRS004
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Test harness
+
+[REQUIREMENT]
+UID: SSS008
+TITLE: Function-scoped fixtures
+STATEMENT: The test harness shall provide function-scoped pytest fixtures named healthy_adult, tachycardic_adult, hypoxic_adult, hypertensive_adult, pediatric_patient, sensor_fault_patient, and patient_monitor, and each fixture shall return a new instance per test.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SRS005
+
+[REQUIREMENT]
+UID: SSS009
+TITLE: HTML test report contents
+STATEMENT: make test shall write a self-contained pytest HTML report to docs/pytest-report.html, including software version 0.1.0, Python and package versions, the date, and the operating-system user as the person who ran the test.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SRS005
+
+[[/SECTION]]
