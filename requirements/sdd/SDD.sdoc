@@ -1,0 +1,64 @@
+[DOCUMENT]
+TITLE: Software Design Document
+UID: DOC-SDD
+VERSION: 0.1.0
+DATE: 2026-10-20
+
+[[SECTION]]
+TITLE: Software units
+
+[REQUIREMENT]
+UID: SDD001
+TITLE: Human stimulus
+STATEMENT: Human and its patient subclasses shall hold the patient stimulus, including age and sensor validity, and shall not evaluate alarms.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS002
+- TYPE: Parent
+  VALUE: SSS005
+
+[REQUIREMENT]
+UID: SDD002
+TITLE: AlarmLimits unit
+STATEMENT: AlarmLimits shall hold one limit profile and accept_limits shall decide whether a set_limits command is inside the allowed range.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS007
+
+[REQUIREMENT]
+UID: SDD003
+TITLE: AlarmEvaluator unit
+STATEMENT: AlarmEvaluator shall be a pure function from a patient and a limit profile to a set of alarms, including the inclusive-limit and sensor-fault rules.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS002
+- TYPE: Parent
+  VALUE: SSS003
+- TYPE: Parent
+  VALUE: SSS006
+
+[REQUIREMENT]
+UID: SDD004
+TITLE: PatientMonitor unit
+STATEMENT: PatientMonitor shall own attach, start, stop, set_limits, vitals, and alarms, and shall keep the last accepted limits when a command is rejected.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS001
+- TYPE: Parent
+  VALUE: SSS004
+- TYPE: Parent
+  VALUE: SSS005
+- TYPE: Parent
+  VALUE: SSS007
+
+[REQUIREMENT]
+UID: SDD005
+TITLE: No lower-class segregation
+STATEMENT: The pytest harness shall stay separate from the monitor package. No segregation is claimed for a lower software safety class, and every software item in this increment remains at Class C.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS008
+- TYPE: Parent
+  VALUE: SSS009
+
+[[/SECTION]]
