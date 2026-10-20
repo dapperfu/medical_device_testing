@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: tooling
     content: Add pyproject.toml, uv.lock, strictdoc_config.py, Makefile, and README run instructions
-    status: pending
+    status: completed
   - id: requirements
     content: Write SDP, SRS, SSS, SDD, IRS, TP, and TD in requirements/ and validate with StrictDoc
     status: pending
