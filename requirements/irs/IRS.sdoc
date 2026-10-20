@@ -1,0 +1,44 @@
+[DOCUMENT]
+TITLE: Interface Requirements Specification
+UID: DOC-IRS
+VERSION: 0.1.0
+DATE: 2026-10-20
+
+[[SECTION]]
+TITLE: Patient monitor interface
+
+[REQUIREMENT]
+UID: IRS001
+TITLE: attach
+STATEMENT: attach shall accept a Human and shall select the default limit profile for that patient's age.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS005
+
+[REQUIREMENT]
+UID: IRS002
+TITLE: start and stop
+STATEMENT: start shall begin monitoring when a patient is attached and shall reject a start when no patient is attached. stop shall end monitoring.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS004
+
+[REQUIREMENT]
+UID: IRS003
+TITLE: set_limits
+STATEMENT: set_limits shall accept an in-range AlarmLimits and shall raise LimitRejected without changing the limits already in effect when the command is out of range.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS007
+
+[REQUIREMENT]
+UID: IRS004
+TITLE: vitals and alarms
+STATEMENT: vitals shall return a reading whose valid flag is true only while monitoring is running with a valid sensor. alarms shall return the active alarm set and shall return an empty set when monitoring is not running.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS001
+- TYPE: Parent
+  VALUE: SSS006
+
+[[/SECTION]]
