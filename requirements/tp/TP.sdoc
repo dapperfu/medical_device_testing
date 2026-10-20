@@ -53,4 +53,18 @@ RELATIONS:
 - TYPE: Parent
   VALUE: SSS009
 
+[REQUIREMENT]
+UID: TP005
+TITLE: Remote acquisition tests
+STATEMENT: Tests shall cover SOAP GetPatient and the ReadyAPI patient resource, including a successful patient, an unknown patient, and a sensor-fault patient attached to PatientMonitor.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS010
+- TYPE: Parent
+  VALUE: SSS011
+- TYPE: Parent
+  VALUE: SSS012
+- TYPE: Parent
+  VALUE: SSS013
+
 [[/SECTION]]
