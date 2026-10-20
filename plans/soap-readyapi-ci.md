@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: requirements
     content: Add SRS006-SRS007, SSS010-SSS013, SDD, IRS, TP, and TD entries and regenerate docs/html
-    status: pending
+    status: completed
   - id: soap-device
     content: Implement SoapPatientService and SoapPatientDevice with fixtures and tests
     status: completed

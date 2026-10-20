@@ -15,7 +15,11 @@ window.StrictDoc.project.map = {
 
   {"UID":"IRS003","_LINK":"IRS003" },
 
-  {"UID":"IRS004","_LINK":"IRS004" }, ],
+  {"UID":"IRS004","_LINK":"IRS004" },
+
+  {"UID":"IRS005","_LINK":"IRS005" },
+
+  {"UID":"IRS006","_LINK":"IRS006" }, ],
  "requirements/sdd/SDD.html": [
 
 
@@ -31,7 +35,11 @@ window.StrictDoc.project.map = {
 
   {"UID":"SDD004","_LINK":"SDD004" },
 
-  {"UID":"SDD005","_LINK":"SDD005" }, ],
+  {"UID":"SDD005","_LINK":"SDD005" },
+
+  {"UID":"SDD006","_LINK":"SDD006" },
+
+  {"UID":"SDD007","_LINK":"SDD007" }, ],
  "requirements/sdp/SDP.html": [
 
 
@@ -65,7 +73,11 @@ window.StrictDoc.project.map = {
 
   {"UID":"SRS004","_LINK":"SRS004" },
 
-  {"UID":"SRS005","_LINK":"SRS005" }, ],
+  {"UID":"SRS005","_LINK":"SRS005" },
+
+  {"UID":"SRS006","_LINK":"SRS006" },
+
+  {"UID":"SRS007","_LINK":"SRS007" }, ],
  "requirements/sss/SSS.html": [
 
 
@@ -91,7 +103,17 @@ window.StrictDoc.project.map = {
 
   {"UID":"SSS008","_LINK":"SSS008" },
 
-  {"UID":"SSS009","_LINK":"SSS009" }, ],
+  {"UID":"SSS009","_LINK":"SSS009" },
+
+  {"_LINK":"3-Remote-patient-acquisition" },
+
+  {"UID":"SSS010","_LINK":"SSS010" },
+
+  {"UID":"SSS011","_LINK":"SSS011" },
+
+  {"UID":"SSS012","_LINK":"SSS012" },
+
+  {"UID":"SSS013","_LINK":"SSS013" }, ],
  "requirements/td/TD.html": [
 
 
@@ -155,7 +177,29 @@ window.StrictDoc.project.map = {
 
   {"UID":"TD026","_LINK":"TD026" },
 
-  {"UID":"TD027","_LINK":"TD027" }, ],
+  {"UID":"TD027","_LINK":"TD027" },
+
+  {"_LINK":"4-Remote-acquisition-tests" },
+
+  {"UID":"TD028","_LINK":"TD028" },
+
+  {"UID":"TD029","_LINK":"TD029" },
+
+  {"UID":"TD030","_LINK":"TD030" },
+
+  {"UID":"TD031","_LINK":"TD031" },
+
+  {"UID":"TD032","_LINK":"TD032" },
+
+  {"UID":"TD033","_LINK":"TD033" },
+
+  {"UID":"TD034","_LINK":"TD034" },
+
+  {"UID":"TD035","_LINK":"TD035" },
+
+  {"UID":"TD036","_LINK":"TD036" },
+
+  {"UID":"TD037","_LINK":"TD037" }, ],
  "requirements/tp/TP.html": [
 
 
@@ -169,5 +213,7 @@ window.StrictDoc.project.map = {
 
   {"UID":"TP003","_LINK":"TP003" },
 
-  {"UID":"TP004","_LINK":"TP004" }, ],
+  {"UID":"TP004","_LINK":"TP004" },
+
+  {"UID":"TP005","_LINK":"TP005" }, ],
 };

@@ -441,7 +441,7 @@
       js-collapsible_list="list"
       class="toc"
       id="toc"
-      data-js-draggable-list><li data-nodeid="600f0c2e85a4466fa308fac6a74bb3f2">
+      data-js-draggable-list><li data-nodeid="234ed10991be4784b614e3c0585eee44">
         <a
           href="#1-Patient-monitor-interface"
           anchor="1-Patient-monitor-interface"
@@ -450,7 +450,7 @@
           <span class="toc-section-number">
             1
           </span>Patient monitor interface
-            </a><ul><li data-nodeid="63d7239161b4487c9a3709903991b9cc">
+            </a><ul><li data-nodeid="f20012f5448d4aaca84cebe480d3a059">
         <a
           href="#IRS001"
           anchor="IRS001"
@@ -459,7 +459,7 @@
           <span class="toc-section-number">
             1.1
           </span>attach
-            </a></li><li data-nodeid="500139855e194d549020451fdada1e03">
+            </a></li><li data-nodeid="b32db725905a4dbc8cc4b711b62e29ea">
         <a
           href="#IRS002"
           anchor="IRS002"
@@ -468,7 +468,7 @@
           <span class="toc-section-number">
             1.2
           </span>start and stop
-            </a></li><li data-nodeid="aca7df2141204ec6b6a3efb52a3f8e14">
+            </a></li><li data-nodeid="027d7e085b0e4f48aa6e7816e7e1668f">
         <a
           href="#IRS003"
           anchor="IRS003"
@@ -477,7 +477,7 @@
           <span class="toc-section-number">
             1.3
           </span>set_limits
-            </a></li><li data-nodeid="9151513a913d46aaa0886bc2fe99da04">
+            </a></li><li data-nodeid="fb0beac390c44eda97268c7ed1dd4d24">
         <a
           href="#IRS004"
           anchor="IRS004"
@@ -486,6 +486,24 @@
           <span class="toc-section-number">
             1.4
           </span>vitals and alarms
+            </a></li><li data-nodeid="524ad00340d140a995a0394ea53c52e2">
+        <a
+          href="#IRS005"
+          anchor="IRS005"
+          data-turbo="false"
+        >
+          <span class="toc-section-number">
+            1.5
+          </span>SOAP GetPatient
+            </a></li><li data-nodeid="1243e7df0cf64c2abe81cd822d13dc2e">
+        <a
+          href="#IRS006"
+          anchor="IRS006"
+          data-turbo="false"
+        >
+          <span class="toc-section-number">
+            1.6
+          </span>ReadyAPI patient resource
             </a></li></ul>
             </li></ul>
 </turbo-frame>
@@ -2334,6 +2352,20 @@
           </a>
         </li>
         <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/td/TD-TRACE.html#TD035">
+            <span class="requirement__child-uid">TD035</span>
+            SOAP sensor fault on the monitor
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/td/TD-TRACE.html#TD037">
+            <span class="requirement__child-uid">TD037</span>
+            ReadyAPI sensor fault on the monitor
+            
+          </a>
+        </li>
+        <li>
           <a data-turbo="false" class="requirement__link-child" href="../../requirements/tp/TP-TRACE.html#TP001">
             <span class="requirement__child-uid">TP001</span>
             Unit tests before integration
@@ -2541,6 +2573,1258 @@
       data-field-label="statement"
     ><sdoc-autogen><div class="document">
 <p>vitals shall return a reading whose valid flag is true only while monitoring is running with a valid sensor. alarms shall return the active alarm set and shall return an empty set when monitoring is not running.</p>
+</div>
+</sdoc-autogen></sdoc-node-field>
+    
+      
+      
+
+
+
+  
+      
+
+
+
+  
+    </sdoc-scope>
+    
+  
+
+</sdoc-node-content>
+
+
+    </sdoc-node>
+                </div>
+                <div class="content_item" data-role="children">
+</div>
+              </section>
+            
+              <section class="content_section">
+                <div class="content_item" data-role="parents">
+
+
+<ul class="requirement-tree requirement-tree_left"><li class="requirement-tree_branch">
+    <div class="requirement-tree_node">
+      
+
+  <sdoc-node
+    node-style="card"
+    node-role="requirement"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="SSS010"
+  data-anchor="SSS010"
+  node-role="requirement"
+  data-uid="SSS010"
+  
+  
+>
+  
+  <div class="anchor_block" data-testid="anchor_hover_button">
+    
+      
+<div
+  class="anchor_button"
+  title="Click to copy"
+  data-testid="section-anchor-button"
+  data-copy-clipboard-target="button"
+  data-anchor-id="SSS010"
+>
+  <span
+    class="anchor_base_icon"
+    style="display: contents; line-height: 0.1;"
+    data-copy-clipboard-target="copyIcon"
+  >
+    <span class="svg_icon_not_hover_visible"><svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="8" cy="3" r="1"></circle>
+  <line x1="8" y1="4" x2="8" y2="14.5"></line>
+  <path d="M5.5,6 C5.5,6 7,6 10.5,6 C10.5,6 5.5,6 5.5,6 Z"/>
+  <path d="M2,11 C3,10 3.5,9.5 3.5,9.5 C3.5,12 5,13 8,13 C11,13 12.5,12 12.5,9.5 C12.5,9.5 13,10 14,11"/>
+</svg></span>
+    <span class="svg_icon_hover_visible"><svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg></span>
+  </span>
+  <span
+    class="anchor_check_icon"
+    style="display: none; line-height: 0.1;"
+    data-copy-clipboard-target="doneIcon"
+  >
+    <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+  </span>
+  <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover"></div>
+  <span class="anchor_button_text">SSS010</span>
+</div>
+    </div></sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="simple"
+  data-level="3.1"
+  show-node-type-name="REQUIREMENT"
+  data-testid="requirement-style-simple"
+>
+  
+  
+  
+  <sdoc-node-title
+    data-level="3.1"
+  >
+    <sdoc-autogen>3.1.&nbsp;SOAP GetPatient returns a Human</sdoc-autogen>
+  </sdoc-node-title>
+
+
+
+  
+    
+    <sdoc-scope class="node_fields_group-secondary">
+      
+    <sdoc-node-field-label>UID:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-type="singleline"
+      data-field-label="UID"
+    ><sdoc-autogen>SSS010</sdoc-autogen></sdoc-node-field>
+    
+  
+      
+    <sdoc-node-field-label>RELATIONS (Parent):</sdoc-node-field-label>
+    <sdoc-node-field data-field-label="parent relations">
+      <ul class="requirement__link">
+        <li>
+          <a data-turbo="false" class="requirement__link-parent" href="../../requirements/srs/SRS-TRACE.html#SRS006">
+            <span class="requirement__parent-uid">SRS006</span>
+            Obtain a patient over SOAP
+            
+          </a>
+        </li>
+      </ul>
+    </sdoc-node-field>
+    <sdoc-node-field-label>RELATIONS (Child):</sdoc-node-field-label>
+    <sdoc-node-field data-field-label="child relations">
+      <ul class="requirement__link">
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="#IRS005">
+            <span class="requirement__child-uid">IRS005</span>
+            SOAP GetPatient
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/sdd/SDD-TRACE.html#SDD006">
+            <span class="requirement__child-uid">SDD006</span>
+            SOAP patient units
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/td/TD-TRACE.html#TD028">
+            <span class="requirement__child-uid">TD028</span>
+            SOAP returns a patient
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/td/TD-TRACE.html#TD029">
+            <span class="requirement__child-uid">TD029</span>
+            SOAP sensor fault
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/td/TD-TRACE.html#TD035">
+            <span class="requirement__child-uid">TD035</span>
+            SOAP sensor fault on the monitor
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/tp/TP-TRACE.html#TP005">
+            <span class="requirement__child-uid">TP005</span>
+            Remote acquisition tests
+            
+          </a>
+        </li>
+      </ul>
+    </sdoc-node-field>
+      
+    </sdoc-scope>
+    
+    <sdoc-scope class="node_fields_group-primary">
+      
+    <sdoc-node-field-label>STATEMENT:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-label="statement"
+    ><sdoc-autogen><div class="document">
+<p>SoapPatientDevice shall return a Human matching the GetPatient body, including sensor_valid false when the body says the sensor is invalid.</p>
+</div>
+</sdoc-autogen></sdoc-node-field>
+    
+      
+      
+
+
+
+  
+      
+
+
+
+  
+    </sdoc-scope>
+    
+  
+
+</sdoc-node-content>
+
+
+    </sdoc-node>
+    </div>
+
+  </li><li class="requirement-tree_branch">
+    <div class="requirement-tree_node">
+      
+
+  <sdoc-node
+    node-style="card"
+    node-role="requirement"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="SSS011"
+  data-anchor="SSS011"
+  node-role="requirement"
+  data-uid="SSS011"
+  
+  
+>
+  
+  <div class="anchor_block" data-testid="anchor_hover_button">
+    
+      
+<div
+  class="anchor_button"
+  title="Click to copy"
+  data-testid="section-anchor-button"
+  data-copy-clipboard-target="button"
+  data-anchor-id="SSS011"
+>
+  <span
+    class="anchor_base_icon"
+    style="display: contents; line-height: 0.1;"
+    data-copy-clipboard-target="copyIcon"
+  >
+    <span class="svg_icon_not_hover_visible"><svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="8" cy="3" r="1"></circle>
+  <line x1="8" y1="4" x2="8" y2="14.5"></line>
+  <path d="M5.5,6 C5.5,6 7,6 10.5,6 C10.5,6 5.5,6 5.5,6 Z"/>
+  <path d="M2,11 C3,10 3.5,9.5 3.5,9.5 C3.5,12 5,13 8,13 C11,13 12.5,12 12.5,9.5 C12.5,9.5 13,10 14,11"/>
+</svg></span>
+    <span class="svg_icon_hover_visible"><svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg></span>
+  </span>
+  <span
+    class="anchor_check_icon"
+    style="display: none; line-height: 0.1;"
+    data-copy-clipboard-target="doneIcon"
+  >
+    <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+  </span>
+  <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover"></div>
+  <span class="anchor_button_text">SSS011</span>
+</div>
+    </div></sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="simple"
+  data-level="3.2"
+  show-node-type-name="REQUIREMENT"
+  data-testid="requirement-style-simple"
+>
+  
+  
+  
+  <sdoc-node-title
+    data-level="3.2"
+  >
+    <sdoc-autogen>3.2.&nbsp;SOAP fault does not return a patient</sdoc-autogen>
+  </sdoc-node-title>
+
+
+
+  
+    
+    <sdoc-scope class="node_fields_group-secondary">
+      
+    <sdoc-node-field-label>UID:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-type="singleline"
+      data-field-label="UID"
+    ><sdoc-autogen>SSS011</sdoc-autogen></sdoc-node-field>
+    
+  
+      
+    <sdoc-node-field-label>RELATIONS (Parent):</sdoc-node-field-label>
+    <sdoc-node-field data-field-label="parent relations">
+      <ul class="requirement__link">
+        <li>
+          <a data-turbo="false" class="requirement__link-parent" href="../../requirements/srs/SRS-TRACE.html#SRS006">
+            <span class="requirement__parent-uid">SRS006</span>
+            Obtain a patient over SOAP
+            
+          </a>
+        </li>
+      </ul>
+    </sdoc-node-field>
+    <sdoc-node-field-label>RELATIONS (Child):</sdoc-node-field-label>
+    <sdoc-node-field data-field-label="child relations">
+      <ul class="requirement__link">
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="#IRS005">
+            <span class="requirement__child-uid">IRS005</span>
+            SOAP GetPatient
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/sdd/SDD-TRACE.html#SDD006">
+            <span class="requirement__child-uid">SDD006</span>
+            SOAP patient units
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/td/TD-TRACE.html#TD030">
+            <span class="requirement__child-uid">TD030</span>
+            SOAP unknown patient
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/td/TD-TRACE.html#TD031">
+            <span class="requirement__child-uid">TD031</span>
+            SOAP malformed request
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/tp/TP-TRACE.html#TP005">
+            <span class="requirement__child-uid">TP005</span>
+            Remote acquisition tests
+            
+          </a>
+        </li>
+      </ul>
+    </sdoc-node-field>
+      
+    </sdoc-scope>
+    
+    <sdoc-scope class="node_fields_group-primary">
+      
+    <sdoc-node-field-label>STATEMENT:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-label="statement"
+    ><sdoc-autogen><div class="document">
+<p>A SOAP fault or an unknown patient shall not produce a Human.</p>
+</div>
+</sdoc-autogen></sdoc-node-field>
+    
+      
+      
+
+
+
+  
+      
+
+
+
+  
+    </sdoc-scope>
+    
+  
+
+</sdoc-node-content>
+
+
+    </sdoc-node>
+    </div>
+
+  </li></ul></div>
+                <div class="content_item" data-role="current">
+                  
+
+  <sdoc-node
+    node-style="card"
+    node-role="requirement"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="IRS005"
+  data-anchor="IRS005"
+  node-role="requirement"
+  data-uid="IRS005"
+  
+  
+>
+  
+  <div class="anchor_block" data-testid="anchor_hover_button">
+    
+      
+<div
+  class="anchor_button"
+  title="Click to copy"
+  data-testid="section-anchor-button"
+  data-copy-clipboard-target="button"
+  data-anchor-id="IRS005"
+>
+  <span
+    class="anchor_base_icon"
+    style="display: contents; line-height: 0.1;"
+    data-copy-clipboard-target="copyIcon"
+  >
+    <span class="svg_icon_not_hover_visible"><svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="8" cy="3" r="1"></circle>
+  <line x1="8" y1="4" x2="8" y2="14.5"></line>
+  <path d="M5.5,6 C5.5,6 7,6 10.5,6 C10.5,6 5.5,6 5.5,6 Z"/>
+  <path d="M2,11 C3,10 3.5,9.5 3.5,9.5 C3.5,12 5,13 8,13 C11,13 12.5,12 12.5,9.5 C12.5,9.5 13,10 14,11"/>
+</svg></span>
+    <span class="svg_icon_hover_visible"><svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg></span>
+  </span>
+  <span
+    class="anchor_check_icon"
+    style="display: none; line-height: 0.1;"
+    data-copy-clipboard-target="doneIcon"
+  >
+    <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+  </span>
+  <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover"></div>
+  <span class="anchor_button_text">IRS005</span>
+</div>
+    </div></sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="simple"
+  data-level="1.5"
+  show-node-type-name="REQUIREMENT"
+  data-testid="requirement-style-simple"
+>
+  
+  
+  
+  <sdoc-node-title
+    data-level="1.5"
+  >
+    <sdoc-autogen>1.5.&nbsp;SOAP GetPatient</sdoc-autogen>
+  </sdoc-node-title>
+
+
+
+  
+    
+    <sdoc-scope class="node_fields_group-secondary">
+      
+    <sdoc-node-field-label>UID:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-type="singleline"
+      data-field-label="UID"
+    ><sdoc-autogen>IRS005</sdoc-autogen></sdoc-node-field>
+    
+  
+      
+    <sdoc-node-field-label>RELATIONS (Parent):</sdoc-node-field-label>
+    <sdoc-node-field data-field-label="parent relations">
+      <ul class="requirement__link">
+        <li>
+          <a data-turbo="false" class="requirement__link-parent" href="../../requirements/sss/SSS-TRACE.html#SSS010">
+            <span class="requirement__parent-uid">SSS010</span>
+            SOAP GetPatient returns a Human
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-parent" href="../../requirements/sss/SSS-TRACE.html#SSS011">
+            <span class="requirement__parent-uid">SSS011</span>
+            SOAP fault does not return a patient
+            
+          </a>
+        </li>
+      </ul>
+    </sdoc-node-field>
+      
+    </sdoc-scope>
+    
+    <sdoc-scope class="node_fields_group-primary">
+      
+    <sdoc-node-field-label>STATEMENT:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-label="statement"
+    ><sdoc-autogen><div class="document">
+<p>GetPatient shall accept a patientId and shall return that patient's identity, age, vitals, and sensor validity, or a SOAP fault when the patient is unknown or the request is malformed.</p>
+</div>
+</sdoc-autogen></sdoc-node-field>
+    
+      
+      
+
+
+
+  
+      
+
+
+
+  
+    </sdoc-scope>
+    
+  
+
+</sdoc-node-content>
+
+
+    </sdoc-node>
+                </div>
+                <div class="content_item" data-role="children">
+</div>
+              </section>
+            
+              <section class="content_section">
+                <div class="content_item" data-role="parents">
+
+
+<ul class="requirement-tree requirement-tree_left"><li class="requirement-tree_branch">
+    <div class="requirement-tree_node">
+      
+
+  <sdoc-node
+    node-style="card"
+    node-role="requirement"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="SSS012"
+  data-anchor="SSS012"
+  node-role="requirement"
+  data-uid="SSS012"
+  
+  
+>
+  
+  <div class="anchor_block" data-testid="anchor_hover_button">
+    
+      
+<div
+  class="anchor_button"
+  title="Click to copy"
+  data-testid="section-anchor-button"
+  data-copy-clipboard-target="button"
+  data-anchor-id="SSS012"
+>
+  <span
+    class="anchor_base_icon"
+    style="display: contents; line-height: 0.1;"
+    data-copy-clipboard-target="copyIcon"
+  >
+    <span class="svg_icon_not_hover_visible"><svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="8" cy="3" r="1"></circle>
+  <line x1="8" y1="4" x2="8" y2="14.5"></line>
+  <path d="M5.5,6 C5.5,6 7,6 10.5,6 C10.5,6 5.5,6 5.5,6 Z"/>
+  <path d="M2,11 C3,10 3.5,9.5 3.5,9.5 C3.5,12 5,13 8,13 C11,13 12.5,12 12.5,9.5 C12.5,9.5 13,10 14,11"/>
+</svg></span>
+    <span class="svg_icon_hover_visible"><svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg></span>
+  </span>
+  <span
+    class="anchor_check_icon"
+    style="display: none; line-height: 0.1;"
+    data-copy-clipboard-target="doneIcon"
+  >
+    <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+  </span>
+  <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover"></div>
+  <span class="anchor_button_text">SSS012</span>
+</div>
+    </div></sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="simple"
+  data-level="3.3"
+  show-node-type-name="REQUIREMENT"
+  data-testid="requirement-style-simple"
+>
+  
+  
+  
+  <sdoc-node-title
+    data-level="3.3"
+  >
+    <sdoc-autogen>3.3.&nbsp;ReadyAPI patient resource returns a Human</sdoc-autogen>
+  </sdoc-node-title>
+
+
+
+  
+    
+    <sdoc-scope class="node_fields_group-secondary">
+      
+    <sdoc-node-field-label>UID:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-type="singleline"
+      data-field-label="UID"
+    ><sdoc-autogen>SSS012</sdoc-autogen></sdoc-node-field>
+    
+  
+      
+    <sdoc-node-field-label>RELATIONS (Parent):</sdoc-node-field-label>
+    <sdoc-node-field data-field-label="parent relations">
+      <ul class="requirement__link">
+        <li>
+          <a data-turbo="false" class="requirement__link-parent" href="../../requirements/srs/SRS-TRACE.html#SRS007">
+            <span class="requirement__parent-uid">SRS007</span>
+            Obtain a patient from ReadyAPI
+            
+          </a>
+        </li>
+      </ul>
+    </sdoc-node-field>
+    <sdoc-node-field-label>RELATIONS (Child):</sdoc-node-field-label>
+    <sdoc-node-field data-field-label="child relations">
+      <ul class="requirement__link">
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="#IRS006">
+            <span class="requirement__child-uid">IRS006</span>
+            ReadyAPI patient resource
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/sdd/SDD-TRACE.html#SDD007">
+            <span class="requirement__child-uid">SDD007</span>
+            ReadyAPI patient units
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/td/TD-TRACE.html#TD032">
+            <span class="requirement__child-uid">TD032</span>
+            ReadyAPI returns a patient
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/td/TD-TRACE.html#TD033">
+            <span class="requirement__child-uid">TD033</span>
+            ReadyAPI pediatric patient
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/td/TD-TRACE.html#TD034">
+            <span class="requirement__child-uid">TD034</span>
+            ReadyAPI sensor fault
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/td/TD-TRACE.html#TD037">
+            <span class="requirement__child-uid">TD037</span>
+            ReadyAPI sensor fault on the monitor
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/tp/TP-TRACE.html#TP005">
+            <span class="requirement__child-uid">TP005</span>
+            Remote acquisition tests
+            
+          </a>
+        </li>
+      </ul>
+    </sdoc-node-field>
+      
+    </sdoc-scope>
+    
+    <sdoc-scope class="node_fields_group-primary">
+      
+    <sdoc-node-field-label>STATEMENT:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-label="statement"
+    ><sdoc-autogen><div class="document">
+<p>ReadyApiPatientDevice shall return a Human matching the JSON patient resource.</p>
+</div>
+</sdoc-autogen></sdoc-node-field>
+    
+      
+      
+
+
+
+  
+      
+
+
+
+  
+    </sdoc-scope>
+    
+  
+
+</sdoc-node-content>
+
+
+    </sdoc-node>
+    </div>
+
+  </li><li class="requirement-tree_branch">
+    <div class="requirement-tree_node">
+      
+
+  <sdoc-node
+    node-style="card"
+    node-role="requirement"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="SSS013"
+  data-anchor="SSS013"
+  node-role="requirement"
+  data-uid="SSS013"
+  
+  
+>
+  
+  <div class="anchor_block" data-testid="anchor_hover_button">
+    
+      
+<div
+  class="anchor_button"
+  title="Click to copy"
+  data-testid="section-anchor-button"
+  data-copy-clipboard-target="button"
+  data-anchor-id="SSS013"
+>
+  <span
+    class="anchor_base_icon"
+    style="display: contents; line-height: 0.1;"
+    data-copy-clipboard-target="copyIcon"
+  >
+    <span class="svg_icon_not_hover_visible"><svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="8" cy="3" r="1"></circle>
+  <line x1="8" y1="4" x2="8" y2="14.5"></line>
+  <path d="M5.5,6 C5.5,6 7,6 10.5,6 C10.5,6 5.5,6 5.5,6 Z"/>
+  <path d="M2,11 C3,10 3.5,9.5 3.5,9.5 C3.5,12 5,13 8,13 C11,13 12.5,12 12.5,9.5 C12.5,9.5 13,10 14,11"/>
+</svg></span>
+    <span class="svg_icon_hover_visible"><svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg></span>
+  </span>
+  <span
+    class="anchor_check_icon"
+    style="display: none; line-height: 0.1;"
+    data-copy-clipboard-target="doneIcon"
+  >
+    <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+  </span>
+  <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover"></div>
+  <span class="anchor_button_text">SSS013</span>
+</div>
+    </div></sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="simple"
+  data-level="3.4"
+  show-node-type-name="REQUIREMENT"
+  data-testid="requirement-style-simple"
+>
+  
+  
+  
+  <sdoc-node-title
+    data-level="3.4"
+  >
+    <sdoc-autogen>3.4.&nbsp;Unknown ReadyAPI patient does not return a patient</sdoc-autogen>
+  </sdoc-node-title>
+
+
+
+  
+    
+    <sdoc-scope class="node_fields_group-secondary">
+      
+    <sdoc-node-field-label>UID:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-type="singleline"
+      data-field-label="UID"
+    ><sdoc-autogen>SSS013</sdoc-autogen></sdoc-node-field>
+    
+  
+      
+    <sdoc-node-field-label>RELATIONS (Parent):</sdoc-node-field-label>
+    <sdoc-node-field data-field-label="parent relations">
+      <ul class="requirement__link">
+        <li>
+          <a data-turbo="false" class="requirement__link-parent" href="../../requirements/srs/SRS-TRACE.html#SRS007">
+            <span class="requirement__parent-uid">SRS007</span>
+            Obtain a patient from ReadyAPI
+            
+          </a>
+        </li>
+      </ul>
+    </sdoc-node-field>
+    <sdoc-node-field-label>RELATIONS (Child):</sdoc-node-field-label>
+    <sdoc-node-field data-field-label="child relations">
+      <ul class="requirement__link">
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="#IRS006">
+            <span class="requirement__child-uid">IRS006</span>
+            ReadyAPI patient resource
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/sdd/SDD-TRACE.html#SDD007">
+            <span class="requirement__child-uid">SDD007</span>
+            ReadyAPI patient units
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/td/TD-TRACE.html#TD036">
+            <span class="requirement__child-uid">TD036</span>
+            ReadyAPI unknown patient
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-child" href="../../requirements/tp/TP-TRACE.html#TP005">
+            <span class="requirement__child-uid">TP005</span>
+            Remote acquisition tests
+            
+          </a>
+        </li>
+      </ul>
+    </sdoc-node-field>
+      
+    </sdoc-scope>
+    
+    <sdoc-scope class="node_fields_group-primary">
+      
+    <sdoc-node-field-label>STATEMENT:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-label="statement"
+    ><sdoc-autogen><div class="document">
+<p>An unknown ReadyAPI patient shall not produce a Human.</p>
+</div>
+</sdoc-autogen></sdoc-node-field>
+    
+      
+      
+
+
+
+  
+      
+
+
+
+  
+    </sdoc-scope>
+    
+  
+
+</sdoc-node-content>
+
+
+    </sdoc-node>
+    </div>
+
+  </li></ul></div>
+                <div class="content_item" data-role="current">
+                  
+
+  <sdoc-node
+    node-style="card"
+    node-role="requirement"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="IRS006"
+  data-anchor="IRS006"
+  node-role="requirement"
+  data-uid="IRS006"
+  
+  
+>
+  
+  <div class="anchor_block" data-testid="anchor_hover_button">
+    
+      
+<div
+  class="anchor_button"
+  title="Click to copy"
+  data-testid="section-anchor-button"
+  data-copy-clipboard-target="button"
+  data-anchor-id="IRS006"
+>
+  <span
+    class="anchor_base_icon"
+    style="display: contents; line-height: 0.1;"
+    data-copy-clipboard-target="copyIcon"
+  >
+    <span class="svg_icon_not_hover_visible"><svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="8" cy="3" r="1"></circle>
+  <line x1="8" y1="4" x2="8" y2="14.5"></line>
+  <path d="M5.5,6 C5.5,6 7,6 10.5,6 C10.5,6 5.5,6 5.5,6 Z"/>
+  <path d="M2,11 C3,10 3.5,9.5 3.5,9.5 C3.5,12 5,13 8,13 C11,13 12.5,12 12.5,9.5 C12.5,9.5 13,10 14,11"/>
+</svg></span>
+    <span class="svg_icon_hover_visible"><svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg></span>
+  </span>
+  <span
+    class="anchor_check_icon"
+    style="display: none; line-height: 0.1;"
+    data-copy-clipboard-target="doneIcon"
+  >
+    <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+  </span>
+  <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover"></div>
+  <span class="anchor_button_text">IRS006</span>
+</div>
+    </div></sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="simple"
+  data-level="1.6"
+  show-node-type-name="REQUIREMENT"
+  data-testid="requirement-style-simple"
+>
+  
+  
+  
+  <sdoc-node-title
+    data-level="1.6"
+  >
+    <sdoc-autogen>1.6.&nbsp;ReadyAPI patient resource</sdoc-autogen>
+  </sdoc-node-title>
+
+
+
+  
+    
+    <sdoc-scope class="node_fields_group-secondary">
+      
+    <sdoc-node-field-label>UID:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-type="singleline"
+      data-field-label="UID"
+    ><sdoc-autogen>IRS006</sdoc-autogen></sdoc-node-field>
+    
+  
+      
+    <sdoc-node-field-label>RELATIONS (Parent):</sdoc-node-field-label>
+    <sdoc-node-field data-field-label="parent relations">
+      <ul class="requirement__link">
+        <li>
+          <a data-turbo="false" class="requirement__link-parent" href="../../requirements/sss/SSS-TRACE.html#SSS012">
+            <span class="requirement__parent-uid">SSS012</span>
+            ReadyAPI patient resource returns a Human
+            
+          </a>
+        </li>
+        <li>
+          <a data-turbo="false" class="requirement__link-parent" href="../../requirements/sss/SSS-TRACE.html#SSS013">
+            <span class="requirement__parent-uid">SSS013</span>
+            Unknown ReadyAPI patient does not return a patient
+            
+          </a>
+        </li>
+      </ul>
+    </sdoc-node-field>
+      
+    </sdoc-scope>
+    
+    <sdoc-scope class="node_fields_group-primary">
+      
+    <sdoc-node-field-label>STATEMENT:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-label="statement"
+    ><sdoc-autogen><div class="document">
+<p>GET /patients/{patient_id} shall return that patient's identity, age, vitals, and sensor validity as JSON, or status 404 when the patient is unknown.</p>
 </div>
 </sdoc-autogen></sdoc-node-field>
     
