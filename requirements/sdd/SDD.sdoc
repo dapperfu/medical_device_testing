@@ -61,4 +61,24 @@ RELATIONS:
 - TYPE: Parent
   VALUE: SSS009
 
+[REQUIREMENT]
+UID: SDD006
+TITLE: SOAP patient units
+STATEMENT: SoapPatientService shall serve registered Human records over SOAP 1.1 GetPatient, and SoapPatientDevice shall be the client that turns a successful response into a Human.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS010
+- TYPE: Parent
+  VALUE: SSS011
+
+[REQUIREMENT]
+UID: SDD007
+TITLE: ReadyAPI patient units
+STATEMENT: ReadyApiPatientService shall serve GET /patients/{patient_id}, and ReadyApiPatientDevice shall be the client that turns a successful JSON document into a Human.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS012
+- TYPE: Parent
+  VALUE: SSS013
+
 [[/SECTION]]
