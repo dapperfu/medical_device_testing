@@ -1,0 +1,35 @@
+[DOCUMENT]
+TITLE: System Requirements Specification
+UID: DOC-SRS
+VERSION: 0.1.0
+DATE: 2026-10-20
+
+[[SECTION]]
+TITLE: Mock patient monitor system requirements
+
+[REQUIREMENT]
+UID: SRS001
+TITLE: Present vital signs
+STATEMENT: When monitoring is running and the sensor is valid, the monitor shall present the attached patient's heart rate in beats per minute, oxygen saturation in percent, systolic and diastolic blood pressure in millimetres of mercury, and temperature in degrees Celsius.
+
+[REQUIREMENT]
+UID: SRS002
+TITLE: Alarm on out-of-limit vitals
+STATEMENT: The monitor shall raise an alarm when a valid vital sign is outside the limit profile for that patient's age.
+
+[REQUIREMENT]
+UID: SRS003
+TITLE: Sensor-fault alarm
+STATEMENT: The monitor shall raise a sensor-fault alarm when the measurement is invalid, and shall not raise a vital-sign alarm from an invalid measurement.
+
+[REQUIREMENT]
+UID: SRS004
+TITLE: Reject an out-of-range limit command
+STATEMENT: The monitor shall reject an alarm-limit command outside the allowed range and shall leave the limits already in effect unchanged.
+
+[REQUIREMENT]
+UID: SRS005
+TITLE: Publish an HTML test report
+STATEMENT: The test harness shall run the software system tests and publish an HTML results report.
+
+[[/SECTION]]
