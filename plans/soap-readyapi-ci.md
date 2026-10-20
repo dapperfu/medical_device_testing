@@ -13,7 +13,7 @@ todos:
     status: completed
   - id: readyapi-device
     content: Pin readyapi 0.112.0 and implement ReadyApiPatientService and ReadyApiPatientDevice with fixtures and tests
-    status: pending
+    status: completed
   - id: github-actions
     content: Add the GitHub Actions workflow that runs make test and archives docs/pytest-report.html
     status: pending
