@@ -1,0 +1,56 @@
+[DOCUMENT]
+TITLE: Test Plan
+UID: DOC-TP
+VERSION: 0.1.0
+DATE: 2026-10-20
+
+[[SECTION]]
+TITLE: Verification plan
+
+[REQUIREMENT]
+UID: TP001
+TITLE: Unit tests before integration
+STATEMENT: Unit tests in tests/unit shall be executed before integration tests. They shall cover limit acceptance, inclusive boundaries, profile selection, and sensor fault.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS002
+- TYPE: Parent
+  VALUE: SSS003
+- TYPE: Parent
+  VALUE: SSS006
+- TYPE: Parent
+  VALUE: SSS007
+
+[REQUIREMENT]
+UID: TP002
+TITLE: Integration with each patient
+STATEMENT: Integration tests in tests/integration shall combine PatientMonitor with each patient fixture.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS001
+- TYPE: Parent
+  VALUE: SSS005
+
+[REQUIREMENT]
+UID: TP003
+TITLE: System coverage
+STATEMENT: System tests in tests/system shall cover every SSS requirement, including the risk controls SSS006 and SSS007.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS006
+- TYPE: Parent
+  VALUE: SSS007
+- TYPE: Parent
+  VALUE: SSS008
+- TYPE: Parent
+  VALUE: SSS009
+
+[REQUIREMENT]
+UID: TP004
+TITLE: HTML record
+STATEMENT: The test record shall be docs/pytest-report.html produced by make test, and pytest shall collect tests/unit, then tests/integration, then tests/system.
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSS009
+
+[[/SECTION]]
