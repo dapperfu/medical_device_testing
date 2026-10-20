@@ -15,3 +15,5 @@ make strictdoc-generate
 ```
 
 `make test` writes `docs/pytest-report.html`. Requirement HTML is under `docs/html/`. `docs/index.html` links both for GitHub Pages when the site source is the `docs/` folder on `main`.
+
+`SoapPatientDevice` reads a patient from a local SOAP 1.1 `GetPatient` stub. `ReadyApiPatientDevice` reads a patient from a ReadyAPI 0.112.0 `GET /patients/{patient_id}` resource. GitHub Actions runs `make test` and archives `docs/pytest-report.html`. That workflow does not install SmartBear ReadyAPI.

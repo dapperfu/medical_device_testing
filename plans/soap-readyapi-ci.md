@@ -16,7 +16,7 @@ todos:
     status: completed
   - id: github-actions
     content: Add the GitHub Actions workflow that runs make test and archives docs/pytest-report.html
-    status: pending
+    status: completed
 isProject: false
 ---
 
