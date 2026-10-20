@@ -32,4 +32,14 @@ UID: SRS005
 TITLE: Publish an HTML test report
 STATEMENT: The test harness shall run the software system tests and publish an HTML results report.
 
+[REQUIREMENT]
+UID: SRS006
+TITLE: Obtain a patient over SOAP
+STATEMENT: The SOAP patient device shall obtain identity, age, vitals, and sensor validity from a SOAP 1.1 GetPatient response.
+
+[REQUIREMENT]
+UID: SRS007
+TITLE: Obtain a patient from ReadyAPI
+STATEMENT: The ReadyAPI patient device shall obtain identity, age, vitals, and sensor validity from the ReadyAPI patient resource.
+
 [[/SECTION]]
