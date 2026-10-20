@@ -27,6 +27,13 @@ packages = ["src/medical_device_testing"]
 [tool.pytest.ini_options]
 addopts = "--html=docs/pytest-report.html --self-contained-html"
 testpaths = ["tests/unit", "tests/integration", "tests/system"]
+# readyapi 0.112.0 pins Starlette 0.37.2. That release imports the
+# multipart compatibility shim and annotates anyio.abc.BlockingPortal.
+# Both warnings are in that SOUP, and this mock does not patch it.
+filterwarnings = [
+    "ignore:Please use `import python_multipart`:PendingDeprecationWarning",
+    "ignore:The anyio\\.abc\\.BlockingPortal alias is deprecated:DeprecationWarning",
+]
 
 [tool.ruff]
 line-length = 88
