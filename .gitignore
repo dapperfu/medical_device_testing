@@ -221,6 +221,7 @@ __marimo__/
 
 # StrictDoc cache
 .strictdoc_cache/
+docs/_cache/
 output/
 
 # LaTeX build artifacts
