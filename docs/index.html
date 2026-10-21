@@ -2,14 +2,494 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>medical_device_testing</title>
+  <style>
+    :root {
+      --ink: #1b2421;
+      --muted: #5d6a64;
+      --paper: #f3efe6;
+      --card: #fbf8f2;
+      --line: #d8d0c2;
+      --teal: #14635c;
+      --teal-deep: #0c3330;
+      --sand: #efe6d4;
+      --amber: #9a5b22;
+      --focus: #c46a1a;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 480px at 90% -10%, #e7f1ee 0%, transparent 55%),
+        linear-gradient(180deg, #f7f4ee 0%, var(--paper) 28%, #efeae0 100%);
+      font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+
+    a { color: var(--teal); }
+    a:hover { color: var(--teal-deep); }
+
+    :focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 2.5rem));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 1.25rem 0 0;
+    }
+
+    .mast {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wordmark {
+      font-family: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, serif;
+      font-size: 1.15rem;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .mast nav {
+      display: flex;
+      gap: 1.1rem;
+      font-size: 0.92rem;
+    }
+
+    .mast nav a { text-decoration: none; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 2.5rem;
+      padding: 2.6rem 0 2.2rem;
+      align-items: center;
+    }
+
+    .kicker {
+      margin: 0 0 0.6rem;
+      color: var(--amber);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 0.8rem;
+      font-family: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 40rem;
+      font-size: 1.12rem;
+      color: #2c3834;
+    }
+
+    .note {
+      margin: 1rem 0 0;
+      padding: 0.75rem 0.9rem;
+      background: var(--sand);
+      border-left: 3px solid var(--amber);
+      color: #4a3b2a;
+      font-size: 0.92rem;
+    }
+
+    .trace {
+      margin: 0;
+      padding: 1rem 1rem 0.4rem;
+      background: var(--teal-deep);
+      color: #e7f3f0;
+      border-radius: 14px;
+    }
+
+    .trace svg { display: block; width: 100%; height: 72px; }
+    .trace figcaption {
+      padding: 0.35rem 0.15rem 0.75rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #b7d4ce;
+    }
+
+    section { padding: 1.4rem 0 0.4rem; }
+
+    h2 {
+      margin: 0 0 0.35rem;
+      font-family: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+    }
+
+    .section-lead {
+      margin: 0 0 1.1rem;
+      max-width: 44rem;
+      color: var(--muted);
+    }
+
+    .loop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .loop li {
+      min-height: 9.5rem;
+      padding: 0.95rem 0.95rem 1rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .step {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--teal);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .loop h3, .card h3, .doc h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    .loop p, .card p, .doc p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+
+    .card, .doc {
+      padding: 1.05rem 1.1rem 1.1rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .card h3 { font-family: Palatino, "Palatino Linotype", Georgia, serif; font-size: 1.25rem; }
+
+    ul.plain {
+      margin: 0.55rem 0 0;
+      padding-left: 1.1rem;
+    }
+
+    ul.plain li { margin: 0.2rem 0; }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.7rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .chips li {
+      padding: 0.2rem 0.55rem;
+      background: #e7f1ee;
+      border-radius: 999px;
+      color: var(--teal-deep);
+      font-size: 0.82rem;
+    }
+
+    .docs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .doc {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.85rem;
+      align-items: start;
+    }
+
+    .abbr {
+      width: 3.1rem;
+      padding-top: 0.15rem;
+      color: var(--teal);
+      font-family: Palatino, "Palatino Linotype", Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .doc-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.55rem;
+      font-size: 0.88rem;
+    }
+
+    .doc-links a { text-decoration: none; }
+    .doc-links a:hover { text-decoration: underline; }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin: 1.3rem 0 0.4rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .button.primary {
+      background: var(--teal);
+      color: #f6fffd;
+    }
+
+    .button.primary:hover { background: var(--teal-deep); color: #fff; }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--teal-deep);
+      border: 1px solid var(--teal);
+    }
+
+    footer {
+      margin-top: 2.4rem;
+      padding: 1.2rem 0 2rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    footer p { margin: 0; }
+
+    @media (max-width: 860px) {
+      .hero, .loop, .columns, .docs { grid-template-columns: 1fr; }
+      .loop li::after { display: none; }
+      .mast { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-  <h1>medical_device_testing</h1>
-  <p>Mock vital-signs patient monitor. This site is a training record, not a conformity claim.</p>
-  <ul>
-    <li><a href="html/index.html">Requirements</a></li>
-    <li><a href="pytest-report.html">Pytest results</a></li>
-  </ul>
+  <header>
+    <div class="wrap mast">
+      <a class="wordmark" href="index.html">medical_device_testing</a>
+      <nav>
+        <a href="#project">Project</a>
+        <a href="#loop">Closed loop</a>
+        <a href="#requirements">Requirements</a>
+        <a href="pytest-report.html">Pytest report</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div>
+        <p class="kicker">Training mock · software safety class C</p>
+        <h1>Mock humans, exercised against mock devices, on every change.</h1>
+        <p class="lede">This project shows a closed loop: fixture patients stand in for humans, device software reads their vital signs, pytest checks the result against written requirements, and GitHub Actions runs that suite on every push and pull request.</p>
+        <p class="note">This site is a training record. It is not a conformity claim, a certification, or a regulatory submission. Class C was confirmed for the exercise on 2026-10-20.</p>
+      </div>
+      <figure class="trace" aria-hidden="true">
+        <svg viewBox="0 0 320 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="0,36 28,36 40,36 52,14 64,58 76,22 88,36 140,36 156,36 168,8 184,64 198,28 210,36 320,36" stroke="#7dcec4" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+        <figcaption>Heart rate · SpO2 · pressure · temperature</figcaption>
+      </figure>
+    </div>
+
+    <section id="project">
+      <div class="wrap">
+        <h2>The project</h2>
+        <p class="section-lead">A small vital-signs patient monitor and two remote patient readers. The humans are Python fixtures. The devices are the software under test. Nothing here is a real monitor or a real patient.</p>
+        <div class="columns">
+          <article class="card">
+            <h3>Mock humans</h3>
+            <p>Each patient is a subclass of <code>Human</code> with a fixed age, vitals, and sensor state. Tests use a new instance every time.</p>
+            <ul class="chips">
+              <li>Healthy adult</li>
+              <li>Tachycardic adult</li>
+              <li>Hypoxic adult</li>
+              <li>Hypertensive adult</li>
+              <li>Pediatric patient</li>
+              <li>Sensor-fault patient</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Devices under test</h3>
+            <ul class="plain">
+              <li><strong>Patient monitor</strong> — attaches a patient, selects adult or pediatric alarm limits by age, and raises vital-sign or sensor-fault alarms.</li>
+              <li><strong>SOAP patient device</strong> — reads the same fields from a local SOAP 1.1 <code>GetPatient</code> stub.</li>
+              <li><strong>ReadyAPI patient device</strong> — reads them from <code>GET /patients/{patient_id}</code> on readyapi 0.112.0. The workflow does not install SmartBear ReadyAPI.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="loop">
+      <div class="wrap">
+        <h2>Closed loop in GitHub Actions</h2>
+        <p class="section-lead">Requirements name the behavior. Tests verify it. Continuous integration runs the tests and keeps the HTML report. Trace links point from a failing check back to the requirement it was written for.</p>
+        <ol class="loop">
+          <li>
+            <span class="step">01</span>
+            <h3>Requirements</h3>
+            <p>StrictDoc sources in <code>requirements/</code> state what the monitor, the interfaces, and the harness shall do.</p>
+          </li>
+          <li>
+            <span class="step">02</span>
+            <h3>Mock closed loop</h3>
+            <p>A fixture human is acquired in process, over SOAP, or over ReadyAPI, then attached to the monitor.</p>
+          </li>
+          <li>
+            <span class="step">03</span>
+            <h3>Pytest</h3>
+            <p><code>make test</code> runs unit, then integration, then system tests and writes <code>docs/pytest-report.html</code>.</p>
+          </li>
+          <li>
+            <span class="step">04</span>
+            <h3>GitHub Actions</h3>
+            <p>On push and pull request, the workflow runs that same command and archives the report, including when the run fails.</p>
+          </li>
+        </ol>
+        <div class="actions">
+          <a class="button primary" href="pytest-report.html">Open the pytest report</a>
+          <a class="button secondary" href="html/index.html">Browse the requirements tree</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="requirements">
+      <div class="wrap">
+        <h2>Requirements documents</h2>
+        <p class="section-lead">Seven StrictDoc documents cover the plan, the system and software requirements, the design and interfaces, and the tests. Each page below opens the exported HTML. Table and trace views sit beside it.</p>
+        <div class="docs">
+          <article class="doc">
+            <div class="abbr">SDP</div>
+            <div>
+              <h3>Software Development Plan</h3>
+              <p>Class C activities for this increment, the PEP 8 and Ruff standard, verification order, SOUP, and traceability.</p>
+              <div class="doc-links">
+                <a href="html/requirements/sdp/SDP.html">Document</a>
+                <a href="html/requirements/sdp/SDP-TABLE.html">Table</a>
+                <a href="html/requirements/sdp/SDP-TRACE.html">Trace</a>
+              </div>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="abbr">SRS</div>
+            <div>
+              <h3>System Requirements Specification</h3>
+              <p>Present vitals, alarm outside the age profile, raise sensor fault, reject bad limits, publish the HTML report, and obtain a patient over SOAP and ReadyAPI.</p>
+              <div class="doc-links">
+                <a href="html/requirements/srs/SRS.html">Document</a>
+                <a href="html/requirements/srs/SRS-TABLE.html">Table</a>
+                <a href="html/requirements/srs/SRS-TRACE.html">Trace</a>
+              </div>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="abbr">SSS</div>
+            <div>
+              <h3>Software Requirements Specification</h3>
+              <p>The software items that satisfy the system requirements, including the two risk controls for sensor fault and rejected limits.</p>
+              <div class="doc-links">
+                <a href="html/requirements/sss/SSS.html">Document</a>
+                <a href="html/requirements/sss/SSS-TABLE.html">Table</a>
+                <a href="html/requirements/sss/SSS-TRACE.html">Trace</a>
+              </div>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="abbr">SDD</div>
+            <div>
+              <h3>Software Design Document</h3>
+              <p>Units for the human stimulus, alarm limits, alarm evaluation, the patient monitor, and the SOAP and ReadyAPI readers.</p>
+              <div class="doc-links">
+                <a href="html/requirements/sdd/SDD.html">Document</a>
+                <a href="html/requirements/sdd/SDD-TABLE.html">Table</a>
+                <a href="html/requirements/sdd/SDD-TRACE.html">Trace</a>
+              </div>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="abbr">IRS</div>
+            <div>
+              <h3>Interface Requirements Specification</h3>
+              <p><code>attach</code>, <code>start</code>, <code>stop</code>, <code>set_limits</code>, vitals and alarms, SOAP <code>GetPatient</code>, and the ReadyAPI patient resource.</p>
+              <div class="doc-links">
+                <a href="html/requirements/irs/IRS.html">Document</a>
+                <a href="html/requirements/irs/IRS-TABLE.html">Table</a>
+                <a href="html/requirements/irs/IRS-TRACE.html">Trace</a>
+              </div>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="abbr">TP</div>
+            <div>
+              <h3>Test Plan</h3>
+              <p>Unit tests before integration, one integration pass per patient, system coverage of the software requirements, and the HTML record.</p>
+              <div class="doc-links">
+                <a href="html/requirements/tp/TP.html">Document</a>
+                <a href="html/requirements/tp/TP-TABLE.html">Table</a>
+                <a href="html/requirements/tp/TP-TRACE.html">Trace</a>
+              </div>
+            </div>
+          </article>
+          <article class="doc">
+            <div class="abbr">TD</div>
+            <div>
+              <h3>Test Description</h3>
+              <p>One description for each test function, linked to the software requirement that test verifies.</p>
+              <div class="doc-links">
+                <a href="html/requirements/td/TD.html">Document</a>
+                <a href="html/requirements/td/TD-TABLE.html">Table</a>
+                <a href="html/requirements/td/TD-TRACE.html">Trace</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>medical_device_testing · mock vital-signs patient monitor and pytest harness · GitHub Pages source is this <code>docs/</code> folder.</p>
+    </div>
+  </footer>
 </body>
 </html>
